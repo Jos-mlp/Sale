@@ -76,20 +76,19 @@ function renderProducts(arr) {
     const productName = document.createElement('p');
     productName.innerText = product.name;
   
-    productInfoDiv.appendChild(productPrice);
-    productInfoDiv.appendChild(productName);
+    //append -> Inserta varios elementos
+    productInfoDiv.append(productPrice,productName);
   
     const productInfoFigure = document.createElement('figure');
     const productImgCart = document.createElement('img');
     productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
   
+    //appendChild -> Inserta un solo elemento
     productInfoFigure.appendChild(productImgCart);
   
-    productInfo.appendChild(productInfoDiv);
-    productInfo.appendChild(productInfoFigure);
+    productInfo.appendChild(productInfoDiv, productInfoFigure);
   
-    productCard.appendChild(productImg);
-    productCard.appendChild(productInfo);
+    productCard.append(productImg, productInfo);
   
     cardsContainer.appendChild(productCard);
   }
